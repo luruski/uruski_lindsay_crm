@@ -1,0 +1,13 @@
+<h1>All Customers</h1>
+
+<%# Navigation links to the other two finder pages %>
+<nav class="customer-nav">
+  <%= link_to "Alphabetized", "/customers/alphabetized" %> |
+  <%= link_to "Missing Email", "/customers/missing_email" %>
+</nav>
+
+<%# Loop through every customer and render the partial for each one. %>
+<%# Rails automatically passes each customer into the partial as `customer`. %>
+<div class="customer-list">
+  <%= render @customers %>
+</div>

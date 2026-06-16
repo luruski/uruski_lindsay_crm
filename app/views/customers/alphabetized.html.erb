@@ -1,0 +1,11 @@
+<h1>Customers (A–Z)</h1>
+
+<%# Navigation links to the other two finder pages %>
+<nav class="customer-nav">
+  <%= link_to "Home (All Customers)", "/" %> |
+  <%= link_to "Missing Email", "/customers/missing_email" %>
+</nav>
+
+<div class="customer-list">
+  <%= render @customers %>
+</div>

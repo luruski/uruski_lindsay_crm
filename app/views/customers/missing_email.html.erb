@@ -1,0 +1,16 @@
+<h1>Customers Missing an Email</h1>
+
+<%# Navigation links to the other two finder pages %>
+<nav class="customer-nav">
+  <%= link_to "Home (All Customers)", "/" %> |
+  <%= link_to "Alphabetized", "/customers/alphabetized" %>
+</nav>
+
+<%# If nobody is missing an email, show a friendly message instead of a blank page. %>
+<% if @customers.any? %>
+  <div class="customer-list">
+    <%= render @customers %>
+  </div>
+<% else %>
+  <p>Every customer has an email on file.</p>
+<% end %>

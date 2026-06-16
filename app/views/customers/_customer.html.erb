@@ -1,0 +1,27 @@
+<%# This partial displays one customer's info. %>
+<%# It expects a local variable called `customer` to be passed in. %>
+<div class="box customer-card">
+
+  <%# Show the customer's image if they have one attached. %>
+  <%# Otherwise show a placeholder so the layout doesn't break. %>
+  <% if customer.image.attached? %>
+    <%= image_tag customer.image, class: "customer-image", width: 150 %>
+  <% else %>
+    <p class="no-image">No image</p>
+  <% end %>
+
+  <%# The customer's details. %>
+  <h2 class="customer-name"><%= customer.full_name %></h2>
+
+  <p><strong>Phone:</strong> <%= customer.phone_number %></p>
+
+  <%# Some customers have no email, so show a note when it's blank. %>
+  <% if customer.email.present? %>
+    <p><strong>Email:</strong> <%= customer.email %></p>
+  <% else %>
+    <p><strong>Email:</strong> <em>None on file</em></p>
+  <% end %>
+
+  <p><strong>Notes:</strong> <%= customer.notes %></p>
+
+</div>
